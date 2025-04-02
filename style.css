@@ -99,7 +99,7 @@
  a{ text-decoration: none;}
  .header a{
     color: var(--color-body);
-    font-size: 16px;
+    font-size: 14px;
     transition: all .4S;
     font-weight: 700;
  }
@@ -111,11 +111,66 @@
  .burger{
     background: none;
     border: none;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
  }
-  
+ @media screen and (max-width: 720px){
+   nav{
+      display: flex;
+      position: fixed;
+      top: 55px;
+      left: 110%;
+      width: 100%;
+      height: calc(100vh -55px);
+      background-color: #f5f5f5;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      opacity:0;
+      transition: all 0.5s ease-out
+   }
+
+   .show-nav nav{
+      opacity:1;
+      width:100%;
+      left:0;
+      z-index: 2;
+   }
+   .show-nav .burger .bar{
+      width:0;
+   }
+   .show-nav .burger .bar::before{
+      transform: rotate(-45deg);
+   
+   }
+   .show-nav .burger .bar::after{
+      transform: rotate(45deg);
+   }
+   .burger .bar::before,
+   .burger .bar::after{
+      transition: all.2s ease-out;
+   }
+   nav .menu li {
+      display: flex;
+      justify-content: center;
+   }
+   .show-nav nav li a:hover{
+      transform: scale(1.1);
+   }
+   nav  .menu a{
+      display: block;
+      font-size: 2rem;
+      padding: 2rem;
+      color: #7474d3;
+      transition: all .4S;
+   }
+   nav .menu a:hover{
+      color: #ff0000;
+   }
+ }
+ 
  @media screen and (max-width: 749px){
    nav{
       display: flex;
@@ -171,6 +226,8 @@
       color: #ff0000;
    }
  }
+  
+ 
  .social .icon{
     height: 18px;
  }
