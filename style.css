@@ -1,5 +1,4 @@
- 
- :root{
+:root{
    --color-body:#333;
    --background-body:#000 ;
    --darkMode:var(--background-body);
@@ -264,6 +263,13 @@ transform: translateY(-8px);
  }
  .burger .bar::after{
    transform: translateY(8px);
+ }
+ .logo-name{
+   display: block;
+   font-size: 3rem;
+   color: white;
+   margin-bottom: 0.5rem;
+   text-align: center;
  }
    .home .title{
       font-size: 3rem; 
@@ -642,3 +648,22 @@ transform: translateX(-110%);
   .show.modal{
    display: block;
   }
+/* Suppression du background sur la section compétences */
+.competence {
+  background: none !important;
+}
+
+/* Animation de rotation pour les logos */
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.competence .bar i {
+  display: inline-block;
+  animation: rotateLogo 2s linear infinite;
+}
